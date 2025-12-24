@@ -1,7 +1,20 @@
-import React from "react";
+import Link from "next/link";
+import Nav from "./Nav";
 
-const Header = () => {
-  return <div>Header</div>;
-};
+export default function Header() {
+  return (
+    <header className=" container mx-auto pt-2">
+      <div className=" w-full">
+        <div className="flex items-center justify-between py-6">
+          {/* Brand */}
+          <Link href={"/"} className="text-2xl font-semibold">
+            KR<span className="text-blue-600">.</span>
+          </Link>
 
-export default Header;
+          {/* Navigation */}
+          <Nav />
+        </div>
+      </div>
+    </header>
+  );
+}
