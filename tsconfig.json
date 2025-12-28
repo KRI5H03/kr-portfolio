@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "script/seed.ts"  ],
   "exclude": ["node_modules"]
 }
