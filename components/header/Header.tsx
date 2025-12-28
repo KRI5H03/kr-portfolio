@@ -8,7 +8,7 @@ export default function Header() {
         <div className="flex items-center justify-between py-6">
           {/* Brand */}
           <Link href={"/"} className="text-2xl font-semibold">
-            KR<span className="text-blue-600">.</span>
+            Krish<span className="text-accent">.</span>
           </Link>
 
           {/* Navigation */}

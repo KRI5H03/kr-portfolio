@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 import Header from "@/components/header/Header";
-
-const geistSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-});
+import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Krish Ramani",
@@ -27,10 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen`}
+        className={` antialiased w-screen xl:px-12 lg:px-8 md:px-4 sm:px-0`}
       >
         <Header />
-        <main>{children}</main>
+
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );

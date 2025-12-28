@@ -15,7 +15,7 @@ export default function NavLink({ href, children }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className={`relative font-semibold transition-colors hover:text-accent ${
+      className={`relative font-semibold transition-colors hover:text-accent-hover ${
         isActive ? "text-accent border-b-2 border-accent" : ""
       }`}
     >

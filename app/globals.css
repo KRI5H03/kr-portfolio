@@ -1,22 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --color-accent: #00ff99;
+  --color-accent-hover: #00e187;
+}
 body {
-  @apply min-h-full bg-stone-300 text-neutral-700 antialiased;
+  @apply min-h-full bg-neutral-900 text-stone-200 antialiased;
 }
 
 .button {
-  @apply bg-accent hover:bg-accent/90 rounded-full px-5 py-2 cursor-pointer transition-all;
+  @apply bg-accent text-stone-900 hover:bg-accent-hover rounded-full px-5 py-2 cursor-pointer transition-all;
 }
 
-@theme {
-  --color-accent: #3b82f6;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    @apply bg-neutral-800 text-stone-200;
-  }
-  @theme {
-    --color-accent: #3b82f6;
-  }
+.btn-outline {
+  @apply border-2 border-accent text-accent hover:bg-accent-hover hover:text-stone-800 rounded-full px-5 py-2 cursor-pointer transition-all;
 }
