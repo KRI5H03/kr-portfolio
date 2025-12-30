@@ -13,7 +13,7 @@ async function main() {
         longDesc: 'A modern portfolio website built with Next.js, featuring project showcases, skills section, and contact information. Designed with a clean, professional aesthetic.',
         category: 'Portfolio',
         technologies: 'Next.js,React,Tailwind CSS,TypeScript',
-        image: '/projects/portfolio.jpg',
+        image: '/portfolio.png',
         liveUrl: 'https://krish-poetfolio.vercel.app/', // Add your real URL
         githubUrl: 'https://github.com/KRI5H03/krish-poetfolio',
         isRealProject: false, // Practice project
@@ -25,7 +25,7 @@ async function main() {
         longDesc: 'A beautifully designed coffee shop website featuring smooth animations, product showcase, and an elegant user interface. Built to provide an immersive browsing experience.',
         category: 'Landing Page',
         technologies: 'Next.js,React,Tailwind CSS,Framer Motion',
-        image: '/projects/zenbrew.jpg',
+        image: '/zenbrew.png',
         liveUrl: 'https://zenbrew-sigma.vercel.app/', // Add your real URL
         githubUrl: 'https://github.com/KRI5H03/zenbrew',
         isRealProject: false, // Practice project
@@ -37,7 +37,7 @@ async function main() {
         longDesc: 'A dynamic web application built with modern technologies, focusing on user experience and responsive design. Features interactive elements and clean architecture.',
         category: 'Web App',
         technologies: 'Next.js,React,Tailwind CSS,TypeScript',
-        image: '/projects/venoma.jpg',
+        image: '/venoma.png',
         liveUrl: 'https://venoma-chi.vercel.app/', // Add your real URL
         githubUrl: 'https://github.com/KRI5H03/venoma',
         isRealProject: false, // Practice project
@@ -49,7 +49,7 @@ async function main() {
         longDesc: 'A serene and minimalist web application emphasizing clean design and smooth user interactions. Built with performance and accessibility in mind.',
         category: 'Web App',
         technologies: 'Next.js,React,Tailwind CSS',
-        image: '/projects/serene.jpg',
+        image: '/serene.png',
         liveUrl: 'https://serene-k.vercel.app/', // Add your real URL
         githubUrl: 'https://github.com/KRI5H03/serene',
         isRealProject: false, // Practice project

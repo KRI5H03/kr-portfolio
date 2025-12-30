@@ -56,7 +56,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
             <div className="group flex flex-col h-full bg-gray-900/50 rounded-lg border border-gray-800 overflow-hidden hover:border-emerald-400/50 transition-colors">
               {/* Project Image */}
               <div className="relative h-48 bg-gray-900 overflow-hidden">
-                {project.image ? (
+                {project.image && project.image.trim() !== "" ? (
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -65,7 +65,22 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full text-gray-600">
-                    No Image
+                    <div className="text-center">
+                      <svg
+                        className="w-16 h-16 mx-auto mb-2 opacity-50"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <p className="text-sm">No Image</p>
+                    </div>
                   </div>
                 )}
 
@@ -84,7 +99,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
               </div>
 
               {/* Project Info */}
-              <div className="p-5 flex flex-col grow">
+              <div className="p-5 flex flex-col flex-grow">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-emerald-400 text-sm">
                     {project.category}
@@ -95,7 +110,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
                   {project.title}
                 </h3>
 
-                <p className="text-gray-400 text-sm mb-4 line-clamp-2 grow">
+                <p className="text-gray-400 text-sm mb-4 line-clamp-2 flex-grow">
                   {project.description}
                 </p>
 
@@ -115,7 +130,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
                 </div>
 
                 {/* View Live Button */}
-                {project.liveUrl ? (
+                {project.liveUrl && project.liveUrl.trim() !== "" ? (
                   <a
                     href={project.liveUrl}
                     target="_blank"
@@ -138,7 +153,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
                     </svg>
                   </a>
                 ) : (
-                  <div className="text-center text-gray-500 text-sm py-2.5">
+                  <div className="text-center text-gray-500 text-sm py-2.5 border border-gray-800 rounded-lg">
                     No live link available
                   </div>
                 )}
