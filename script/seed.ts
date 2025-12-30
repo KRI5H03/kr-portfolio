@@ -14,7 +14,7 @@ async function main() {
         category: 'Portfolio',
         technologies: 'Next.js,React,Tailwind CSS,TypeScript',
         image: '/projects/portfolio.jpg',
-        liveUrl: 'https://krish-portfolio-demo.vercel.app', // Add your real URL
+        liveUrl: 'https://krish-poetfolio.vercel.app/', // Add your real URL
         githubUrl: 'https://github.com/KRI5H03/krish-poetfolio',
         isRealProject: false, // Practice project
         order: 1,
@@ -26,7 +26,7 @@ async function main() {
         category: 'Landing Page',
         technologies: 'Next.js,React,Tailwind CSS,Framer Motion',
         image: '/projects/zenbrew.jpg',
-        liveUrl: 'https://zenbrew-demo.vercel.app', // Add your real URL
+        liveUrl: 'https://zenbrew-sigma.vercel.app/', // Add your real URL
         githubUrl: 'https://github.com/KRI5H03/zenbrew',
         isRealProject: false, // Practice project
         order: 2,
@@ -38,7 +38,7 @@ async function main() {
         category: 'Web App',
         technologies: 'Next.js,React,Tailwind CSS,TypeScript',
         image: '/projects/venoma.jpg',
-        liveUrl: 'https://venoma-demo.vercel.app', // Add your real URL
+        liveUrl: 'https://venoma-chi.vercel.app/', // Add your real URL
         githubUrl: 'https://github.com/KRI5H03/venoma',
         isRealProject: false, // Practice project
         order: 3,
@@ -50,7 +50,7 @@ async function main() {
         category: 'Web App',
         technologies: 'Next.js,React,Tailwind CSS',
         image: '/projects/serene.jpg',
-        liveUrl: 'https://serene-demo.vercel.app', // Add your real URL
+        liveUrl: 'https://serene-k.vercel.app/', // Add your real URL
         githubUrl: 'https://github.com/KRI5H03/serene',
         isRealProject: false, // Practice project
         order: 4,
