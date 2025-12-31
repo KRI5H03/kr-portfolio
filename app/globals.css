@@ -5,7 +5,7 @@
   --color-accent-hover: #00e187;
 }
 body {
-  @apply min-h-full bg-neutral-900 text-stone-200 antialiased;
+  @apply min-h-full bg-neutral-900 text-white antialiased;
 }
 
 .button {
