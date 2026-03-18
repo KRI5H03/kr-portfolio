@@ -1,0 +1,143 @@
+================================================================
+  KR-PORTFOLIO — LEARNING NOTES
+  Krish Ramani | Frontend Developer Portfolio
+================================================================
+
+OVERVIEW
+--------
+This is a personal portfolio website built with modern frontend
+technologies. It showcases your projects, provides a contact
+form, and serves as your public-facing developer identity.
+
+================================================================
+TECHNOLOGIES USED
+================================================================
+
+1. NEXT.JS (App Router)
+   - What it is: A React framework for building web apps.
+   - Why used: Handles routing (pages), server-side rendering,
+     and API endpoints all in one place.
+   - Key concept: Files inside /app/ automatically become pages.
+     e.g. app/projects/page.tsx → yoursite.com/projects
+   - Docs: https://nextjs.org/docs
+
+2. REACT
+   - What it is: A JavaScript library for building UIs from
+     components (reusable pieces of UI).
+   - Why used: Lets you break the UI into small, manageable
+     pieces. Every .tsx file you see IS a React component.
+   - Key concept: Components return JSX (HTML-like syntax inside
+     JS). Props pass data into components.
+   - Docs: https://react.dev
+
+3. TYPESCRIPT (.tsx files)
+   - What it is: JavaScript with type annotations.
+   - Why used: Catches bugs before they happen. If you pass the
+     wrong type of value to a function, TypeScript warns you.
+   - Key concept: TypeScript files end in .ts or .tsx.
+     .tsx = TypeScript + JSX (React components).
+   - Docs: https://www.typescriptlang.org/docs
+
+4. TAILWIND CSS
+   - What it is: A utility-first CSS framework.
+   - Why used: Instead of writing CSS in separate files, you
+     apply short class names directly in JSX.
+     e.g. className="text-xl font-bold text-accent"
+   - Key concept: Classes map directly to CSS rules.
+     "text-xl" = font-size: 1.25rem.
+     "flex" = display: flex.
+   - Version used: Tailwind v4 (config lives in globals.css via
+     @theme block, not tailwind.config.ts)
+   - Docs: https://tailwindcss.com/docs
+
+5. FRAMER MOTION
+   - What it is: An animation library for React.
+   - Why used: Makes it easy to animate components in/out with
+     fade, slide, scale etc.
+   - Key concept: Wrap any element with <motion.div> (or
+     motion.h1, motion.p etc.) and add initial/animate props.
+     e.g. initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+   - Used in: PageTransition.tsx (page-level fade-in on every
+     route change), ProjectGrid.tsx (staggered card animations).
+   - Docs: https://www.framer.com/motion
+
+6. PRISMA (ORM)
+   - What it is: A database toolkit — lets you talk to a
+     database using TypeScript instead of raw SQL.
+   - Why used: To store and fetch your projects from a database.
+   - Key concept: Define your data shape in schema.prisma.
+     Then use prisma.project.findMany() to query data.
+   - Schema file: /prisma/schema.prisma
+   - Docs: https://www.prisma.io/docs
+
+7. CANVAS API (Browser built-in)
+   - What it is: A native browser API for drawing graphics.
+   - Why used: Powers the animated dot grid on the home page
+     (AnimateGrid.tsx). No external library needed.
+   - Key concept: You get a 2D drawing context from a <canvas>
+     element and draw shapes frame-by-frame using
+     requestAnimationFrame().
+   - File: components/AnimateGrid.tsx
+
+================================================================
+PROJECT STRUCTURE
+================================================================
+
+/app
+  layout.tsx         → Root layout: wraps every page with the
+                       Header and PageTransition.
+  page.tsx           → Home page (/)
+  /projects
+    page.tsx         → Projects page (/projects)
+  /contact
+    page.tsx         → Contact page (/contact)
+
+/components
+  header/
+    Header.tsx       → Top navigation bar
+  PageTransition.tsx → Wraps pages in a fade-in animation on
+                       every route change (uses Framer Motion)
+  ProjectsHeader.tsx → The heading + description on /projects
+  ProjectGrid.tsx    → The grid of project cards
+  AnimateGrid.tsx    → The interactive dot grid on the home page
+                       (uses Canvas API + mouse tracking)
+
+/prisma
+  schema.prisma      → Database schema (Project model defined here)
+
+/lib
+  prisma.ts          → Exports the shared Prisma client instance
+
+================================================================
+KEY CONCEPTS TO REVISE
+================================================================
+
+- React component lifecycle: useEffect, useState
+- TypeScript: interfaces, types, generics
+- Next.js App Router: server vs client components
+  ("use client" directive at top = runs in the browser)
+- CSS variables: --color-accent used in globals.css and read
+  in AnimateGrid.tsx with getComputedStyle()
+- Framer Motion: AnimatePresence, motion components, variants
+- Canvas 2D API: ctx.arc(), ctx.fillStyle, requestAnimationFrame
+
+================================================================
+THINGS BUILT / DECISIONS MADE
+================================================================
+
+- Why no exit animation?
+  Exit animations were making navigation feel slow/laggy,
+  so they were removed. Only entry animation (fade + slide)
+  is kept.
+
+- Why hardcode accent color in AnimateGrid.tsx?
+  CSS variables from Tailwind v4's @theme block weren't being
+  picked up by getComputedStyle at runtime initially. The color
+  is now read via getComputedStyle with a fallback of #00ff99.
+
+- Why remove motion from ProjectsHeader?
+  PageTransition already animates the whole page in. Adding
+  a second animation inside ProjectsHeader caused a "double
+  animation" effect. Removed to keep it clean.
+
+================================================================

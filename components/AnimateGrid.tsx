@@ -28,11 +28,8 @@ export default function AnimatedGrid() {
     let mouseX = -1000;
     let mouseY = -1000;
 
-    // Get accent color from CSS variable (emerald-400)
-    const accentColor =
-      getComputedStyle(document.documentElement)
-        .getPropertyValue("--accent")
-        .trim() || "16, 185, 129";
+    // Accent color hardcoded as #00ff99 (Tailwind v4 stores colors as oklch in CSS vars, not hex)
+    const accentColor = "0, 255, 153";
 
     // Track mouse position
     const handleMouseMove = (e: MouseEvent) => {

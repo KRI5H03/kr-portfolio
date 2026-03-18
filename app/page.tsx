@@ -1,5 +1,11 @@
 import AnimatedGrid from "@/components/AnimateGrid";
 
+const stats = [
+  { value: "10+", label: "Projects Built" },
+  { value: "2+", label: "Years Learning" },
+  { value: "100%", label: "Passion Driven" },
+];
+
 export default function HomePage() {
   return (
     <main className="container mx-auto min-h-screen">
@@ -16,7 +22,7 @@ export default function HomePage() {
 
           {/* Heading */}
           <h1 className="text-8xl ">
-            Hello I'm <br />{" "}
+            Hello I&apos;m <br />{" "}
             <span className="text-accent text-12xl">Krish Ramani</span>
           </h1>
 
@@ -35,6 +41,20 @@ export default function HomePage() {
             <a href="/contact" className="btn-outline">
               Hire Me
             </a>
+          </div>
+
+          {/* Stats row */}
+          <div className="flex items-center gap-8 pt-1">
+            {stats.map((stat, i) => (
+              <div key={i} className="flex flex-col gap-0.5">
+                <span className="text-2xl font-bold text-accent">
+                  {stat.value}
+                </span>
+                <span className="text-xs text-neutral-500 font-medium tracking-wide uppercase">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
           </div>
 
           {/* Social links */}
