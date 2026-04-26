@@ -37,7 +37,6 @@ export default function HomePage() {
             <a href="/projects" className="btn-outline">
               Projects
             </a>
-
             <a href="/contact" className="btn-outline">
               Hire Me
             </a>
